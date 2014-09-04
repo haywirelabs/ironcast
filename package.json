@@ -1,0 +1,19 @@
+{
+  "name": "IroncastDemo",
+  "private": true,
+  "dependencies": {
+    "gulp" : "*",
+    "angular" : "*",
+    "browserify": "*",
+    "gulp-browserify": "*",
+    "gulp-clean": "*",
+    "gulp-concat": "*",
+    "gulp-jshint": "*",
+    "gulp-util": "*",
+    "gulp-embedlr": "*",
+    "gulp-livereload": "*",
+    "tiny-lr": "*",
+    "connect-livereload": "*",
+    "express": "*"
+  }
+}
