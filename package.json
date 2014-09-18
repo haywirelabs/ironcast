@@ -2,9 +2,13 @@
   "name": "IroncastDemo",
   "private": true,
   "dependencies": {
-    "gulp" : "*",
-    "angular" : "*",
+    "angular": "*",
     "browserify": "*",
+
+  },
+  "devDependencies": {
+    "debug": "*",
+    "gulp": "*",
     "gulp-browserify": "*",
     "gulp-clean": "*",
     "gulp-concat": "*",
