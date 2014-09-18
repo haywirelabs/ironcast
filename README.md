@@ -19,6 +19,9 @@ Gulp Functionality
 Run Linting functionality
   - ```gulp lint```
 
+Create build artifact
+  - ```gulp build```
+
 Build Distribution folder and serve it with a webserver.  Application will watch for file changes and restart the event loop if a change is made.
 URL: [http://localhost:5000](http://localhost:5000)
   - ```gulp serve```
