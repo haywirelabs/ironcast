@@ -61,7 +61,7 @@ server.all('/*', function(req, res){
   res.sendfile('index.html', {root: 'dist'});
 });
 
-gulp.task('dev', function(){
+gulp.task('serve', function(){
   server.listen(serverport);
   lrserver.listen(livereloadport);
   gulp.run('watch');
