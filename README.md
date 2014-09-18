@@ -9,18 +9,9 @@ Installation
 1. ```git clone https://github.com/haywirelabs/ironcast.git```
 2. ```cd ironcast```
 3. ```npm install```
-
-Run Tool
---------
-
-1. ```node bin/ironcast.js```
-2. Deployment distribution will be created in "dist" directory.
-
-Run Debugger
-------------
-
-Output all debugging messages
-  - ```DEBUG=* node bin/forge_content.js```
+4. ```npm install gulp -g```
+5. ```npm install jshint -g```
+6. ```npm install gulp``` (local project version of Gulp)
 
 Gulp Functionality
 ------------------
