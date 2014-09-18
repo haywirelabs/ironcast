@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
@@ -13,6 +15,7 @@ gulp.task('lint', function(){
 });
 
 // Browserify Task
+
 gulp.task('browserify', function(){
   gulp.src(['app/scripts/main.js'])
   .pipe(browserify({
@@ -23,13 +26,6 @@ gulp.task('browserify', function(){
   .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('watch', ['lint'], function(){
-  gulp.watch(['app/scripts/*.js', 'app/scripts/**/*.js'],[
-    'lint',
-    'browserify'
-  ]);
-});
-
 gulp.task('views', function(){
   gulp.src('app/index.html')
   .pipe(gulp.dest('dist/'));
@@ -37,9 +33,23 @@ gulp.task('views', function(){
   .pipe(gulp.dest('dist/views/'));
 });
 
-gulp.watch(['app/index.html', 'app/views/**/*.html'], [
-  'views'
-])
+gulp.task('build', ['lint', 'browserify', 'views'], function(){
+  process.stdout.write('\n      ____ \n');
+  process.stdout.write('    ,\'   Y . \n ');
+  process.stdout.write('  /        \\ \n');
+  process.stdout.write('   \\ ()  () /\n');
+  process.stdout.write('    `. /\  ,\'  \n');
+  process.stdout.write('8====| \'  |====8\n\n');
+  process.stdout.write('Your application has been cast.\n\n');
+});
+
+gulp.task('watch', ['lint'], function(){
+  gulp.watch(['app/scripts/*.js', 'app/scripts/**/*.js'],[
+    'lint',
+    'browserify'
+  ]);
+  gulp.watch(['app/index.html', 'app/views/**/*.html'], ['views']);
+});
 
 /**
 *  Gulp Server
@@ -61,8 +71,8 @@ server.all('/*', function(req, res){
   res.sendfile('index.html', {root: 'dist'});
 });
 
-gulp.task('serve', function(){
+gulp.task('serve',['build'], function(){
   server.listen(serverport);
   lrserver.listen(livereloadport);
   gulp.run('watch');
-})
+});
