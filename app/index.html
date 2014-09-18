@@ -1,11 +1,16 @@
 <!doctype html>
 <html lang="en" ng-app="ironcast">
 <head>
-  <title>App</title>
+  <title>Ironcast</title>
 </head>
 <body ng-controller='WelcomeCtrl'>
-  <h1>App</h1>
-  <p>{{testVar}}</p>
+  <h1>Ironcast</h1>
+  <h2>{{title}}</h2>
+  <div ng-repeat-start="content in body">
+    <h3> {{content.document.title}} </h3>
+    <p>{{content.document.contents}}</p>
+  </div>
+  <div ng-repeat-end></div>
   <script src="/js/all.js"></script>
 </body>
 </html>
